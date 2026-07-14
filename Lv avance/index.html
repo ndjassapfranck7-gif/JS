@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+  <section>
+        <form id="nform" >
+                    <div class="conteneur">
+                        <label for="">FORMULAIRE</label>
+                        <label for="">NOM:<input type="text" placeholder="entrer votre nom" required></label>
+                    
+                        <label for="">Premon :<input type="text" placeholder="entrer votre premon" required></label>
+                
+                        <label for="">Email<input type="email" placeholder="entrer votre email" id="email" required></label>
+                    
+                        <label for=""><input type="submit" value="envoyer"></label>
+                    </div>
+            </form>
+            <p id="message"></p>
+  </section>
+    <section>
+        <div>
+        <h2> Compteur : <span id="compteur">0</span></h2>
+        <button id="btn">cliquez ici</button>
+    </div>
+    </section>
+    <section>
+        <div class="galerie-container">
+              <img src="1.png" alt="galerie" id="galerie">
+    </div>
+    </section> 
+    <section class="todo-section">
+        <h2>To-Do List</h2>
+        <div class="todo-input">
+            <input type="text" id="todo-input" placeholder="Ajouter une tâche">
+            <button id="todo-add" type="button">Ajouter</button>
+        </div>
+        <ul id="todo-list"></ul>
+    </section>
+    <section>
+          <button id="theme-toggle" type="button">Mode sombre</button>
+    </section>
+
+    <script src="js3.js"></script>
+</body>
+</html>
