@@ -1,1 +1,40 @@
 @import "tailwindcss";
+
+@layer components {
+    body {
+        @apply bg-gray-100 min-h-screen flex items-center justify-center;
+    }
+
+    section {
+        @apply w-full flex justify-center px-4;
+    }
+
+    #nform {
+        @apply w-full max-w-md;
+    }
+
+    .conteneur {
+        @apply bg-white shadow-lg rounded-lg p-8 flex flex-col gap-5;
+    }
+
+    h1 {
+        @apply text-3xl font-bold text-center text-blue-600 mb-2;
+    }
+
+    label {
+        @apply flex flex-col text-gray-600 font-semibold gap-2;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        @apply border border-gray-400 rounded-md px-4 py-3 outline-none transition duration-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200;
+    }
+
+    input[type="submit"] {
+        @apply w-full bg-blue-500 text-white py-3 rounded-md font-bold cursor-pointer transition duration-300 hover:bg-blue-600 active:scale-95;
+    }
+
+    #message {
+        @apply mt-5 text-center text-lg font-semibold;
+    }
+}
