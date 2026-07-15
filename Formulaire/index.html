@@ -7,21 +7,29 @@
     <title>Mon projet Tailwind</title>
 </head>
 <body>
-    <section>
-        <form id="nform" >
-                    <div class="conteneur">
-                        <label for=""><h1>FORMULAIRE</h1></label>
-                        <label for="">NOM:<input type="text" placeholder="entrer votre nom" required></label>
-                    
-                        <label for="">Premon :<input type="text" placeholder="entrer votre premon" required></label>
-                
-                        <label for="">Email<input type="email" placeholder="entrer votre email" id="email" required></label>
-                    
-                        <label for=""><input type="submit" value="envoyer"></label>
-                    </div>
-            </form>
-            <p id="message"></p>
-  </section>
+    <section class="min-h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600">
+        <form id="nform" class="w-full max-w-md">
+            <div class="conteneur">
+                <h1 class="text-3xl font-bold text-center text-indigo-700">
+                    FORMULAIRE
+                </h1>
+                <label>
+                    Nom
+                    <input type="text" placeholder="Entrer votre nom" required>
+                </label>
+                <label>
+                    Prénom
+                    <input type="text" placeholder="Entrer votre prénom" required>
+                </label>
+                <label>
+                    Email
+                    <input type="email" id="email" placeholder="Entrer votre email" required>
+                </label>
+                <input type="submit" value="Envoyer">
+            </div>
+        </form>
+        <p id="message" class="mt-4 text-center font-semibold"></p>
+    </section>
     <script src="JS.js"></script>
 </body>
 </html>
