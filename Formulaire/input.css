@@ -2,7 +2,7 @@
 
 @layer components {
     body {
-        @apply bg-gray-100 min-h-screen flex items-center justify-center;
+        @apply bg-gray-400 min-h-screen flex items-center justify-center;
     }
 
     section {
