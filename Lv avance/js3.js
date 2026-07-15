@@ -114,3 +114,50 @@ formulaire.addEventListener("submit", function (e) {
         message.style.color = "green";
     }
 });
+const question={
+    texte:"A quel pays correspond le mot manhwa?",
+    choix:[
+        "chine",
+        "japon",
+        "coree",
+        "france"
+    ],
+    bonneReponse:"coree"
+};
+
+function renderQuiz() {
+    const qEl = document.getElementById("question");
+    const chix = document.getElementById("chix");
+    if (!qEl || !chix || !question) return;
+    qEl.textContent = question.texte;
+    chix.innerHTML = "";
+    question.choix.forEach((c, i) => {
+        const label = document.createElement("label");
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = "quiz";
+        input.value = c;
+        input.id = `quiz-${i}`;
+        label.htmlFor = input.id;
+        label.appendChild(input);
+        label.appendChild(document.createTextNode(" " + c));
+        chix.appendChild(label);
+        chix.appendChild(document.createElement("br"));
+    });
+}
+
+function verifier() {
+    const resultatEl = document.getElementById("resultat");
+    if (!resultatEl) return;
+    const selected = document.querySelector('input[name="quiz"]:checked');
+    if (!selected) {
+        resultatEl.textContent = "Veuillez choisir une réponse";
+        resultatEl.style.color = "red";
+        return;
+    }
+    const correct = selected.value === question.bonneReponse;
+    resultatEl.textContent = correct ? "Bonne réponse !" : "Mauvaise réponse.";
+    resultatEl.style.color = correct ? "green" : "red";
+}
+
+renderQuiz();

@@ -1,13 +1,11 @@
 const input = document.getElementById("nom");
-const list = document.getElementById("list");
 const btn = document.getElementById("btn");
 if (btn) {
   btn.addEventListener("click", function () {
     btn.classList.add("active");
   });
 }
-
-// Supprime un <li>
+const list = document.getElementById("list");
 if (list) {
   list.addEventListener("click", function (e) {
     const li = e.target.closest("li");
@@ -24,7 +22,6 @@ if (input) {
     input.style.backgroundColor = "white";
   });
 }
-
 function alerts() {
   alert("reussi");
 }
