@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    /* Palette plate et simple (light) */
+    --bg-1: #f8fafc;
+    --bg-2: #ffffff;
+    --card: #ffffff;
+    --accent: #3b82f6; /* blue-500 */
+    --muted: #6b7280;
+    --text: #0f172a;
+    --danger: #ef4444;
+}
+
+html.dark-mode{
+    /* Palette sombre */
+    --bg-1: #0f172a;
+    --bg-2: #1e293b;
+    --card: #1e293b;
+    --accent: #60a5fa; /* blue-400 */
+    --muted: #94a3b8;
+    --text: #f1f5f9;
+    --danger: #f87171;
+}
+
+body{
+    background: var(--bg-1);
+    color: var(--text);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+section{
+    background: var(--card);
+    border: 1px solid rgba(15,23,42,0.04);
+    box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+html.dark-mode section{
+    border-color: rgba(241,245,249,0.04);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+h1,h2{
+    color: var(--accent);
+}
+
+#todoList li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background: #f1f5f9; /* neutral light */
+    padding:0.75rem;
+    border-radius:0.5rem;
+    color:var(--text);
+    border:1px solid rgba(15,23,42,0.03);
+    transition: background-color 0.3s ease;
+}
+
+#todoList li.checked label{
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+#todoList li.checked{
+    opacity: 0.75;
+}
+
+html.dark-mode #todoList li{
+    background: #334155;
+    border-color: rgba(241,245,249,0.1);
+}
+
+#todoList button{
+    background:transparent;
+    color:var(--danger);
+    border:1px solid rgba(15,23,42,0.06);
+    padding:0.35rem 0.9rem;
+    border-radius:0.375rem;
+}
+
+#todoList button:hover{opacity:0.95}
+
+html.dark-mode #todoList button{
+    border-color: rgba(241,245,249,0.1);
+}
+
+/* Checkbox styling */
+input[type="checkbox"]{
+    accent-color: var(--accent);
+    cursor: pointer;
+}
+
+.delete-btn{
+    transition: opacity 0.2s ease;
+}
+
+#answers label{
+    display:block;
+    padding:0.75rem;
+    border-radius:0.5rem;
+    background:#f8fafc;
+    border:1px solid rgba(15,23,42,0.03);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    color: var(--text);
+}
+
+#answers label:hover{background:#eef2ff}
+
+html.dark-mode #answers label{
+    background: #334155;
+    border-color: rgba(241,245,249,0.1);
+}
+
+html.dark-mode #answers label:hover{
+    background: #475569;
+}
+
+button#addTodoBtn, button#submitAnswerBtn, button#clearAllBtn, button#themeToggle{
+    background: var(--accent);
+    color: white;
+    border: none;
+    box-shadow: none;
+    transition: opacity 0.2s ease;
+}
+
+button#addTodoBtn:hover, button#submitAnswerBtn:hover, button#clearAllBtn:hover, button#themeToggle:hover{
+    opacity:0.95;
+}
+
+html.dark-mode button#clearAllBtn{
+    background: #f87171;
+}
+
+.text-blue-700, .text-blue-600{ color: var(--accent) !important }
+
+/* Styles for input in dark mode */
+html.dark-mode input[type="text"]{
+    background-color: #334155;
+    color: var(--text);
+    border-color: rgba(241,245,249,0.1);
+}
+
+html.dark-mode input[type="text"]::placeholder{
+    color: var(--muted);
+}
+
+html.dark-mode input[type="text"]:focus{
+    border-color: var(--accent);
+    outline: none;
+}
+
+/* Radio buttons in dark mode */
+html.dark-mode input[type="radio"]{
+    accent-color: var(--accent);
+}
